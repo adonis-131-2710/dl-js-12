@@ -101,8 +101,7 @@ body {
 }
 .item:hover {
     transform: translateY(-5px);
-    border-top-color: #fff;
-    border-left-color: #fff;
+    border-color: #fff;
     box-shadow: -5px -5px 20px rgba(191, 0, 255, 0.4);
 }
 .btn-1 {
@@ -165,41 +164,51 @@ button:hover {
 
 @media (max-width: 1024px) {
     .container {
-        flex-direction: column-reverse;
-        height: auto;
-        overflow: visible;
+        flex-direction: column-reverse; 
+        height: 100vh; 
+        overflow: hidden;
     }
+
     .split-left, .split-right {
-        width: 100%; 
-        height: auto;
+        width: 100%;
+        height: 50%; 
         padding: 40px 20px;
+        transition: height 0.7s ease-in-out; 
     }
+
     .hover-left .split-left, .hover-left .split-right,
     .hover-right .split-right, .hover-right .split-left {
         width: 100%;
     }
-
-    .split-right {
-        min-height: 400px; 
+    .hover-left .split-left {
+        height: 70%; 
+        
     }
-
+    .hover-left .split-right {
+        height: 30%; 
+        
+    }
+    .hover-right .split-right {
+        height: 70%; 
+    }
+    .hover-right .split-left {
+        height: 30%; 
+    }
     .title {
-        font-size: 30px;
-        text-align: center;
+         font-size: 28px; text-align: center; 
+        }
+    .text { 
+        font-size: 16px; text-align: center; height: auto; min-height: 60px; 
     }
-
-    .text {
-        font-size: 18px;
-        text-align: center;
-        height: auto; 
+    .box-grid { 
+        grid-template-columns: 1fr; gap: 10px; 
     }
-
-    .box-grid {
-        grid-template-columns: 1fr;
+    .item { 
+        padding: 10px 20px; 
     }
-
+    
     .btn-2 {
-        bottom: 40px; 
+        bottom: 20px;
     }
 }
 
