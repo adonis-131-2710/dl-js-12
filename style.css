@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Verdana";
+}
+body {
+    background: radial-gradient(rgb(28, 3, 54),rgb(0, 0, 0));
+}
+
+.split-left, .split-right {
+    position: relative;
+    width: 50%; 
+    height: 100%;
+    transition: width 0.7s ease-in-out; 
+}
+.hover-left .split-left {
+    width: 65%; 
+}
+.hover-left .split-right {
+    width: 35%; 
+}
+.hover-right .split-right {
+    width: 60%; 
+}
+.hover-right .split-left {
+    width: 40%; 
+}
+.container {
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    overflow: hidden;
+}
+.split-left {
+    width: 50%;
+    margin: 0; 
+    padding: 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    color: rgb(255, 255, 255);
+}
+.title {
+    font-size: 38px;
+    font-weight: 600;
+    text-shadow: 0 0 9px rgba(255, 255, 255, 0.623);
+}
+.text {
+    width: 100%;
+    height: 72px;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 0 9px rgba(143, 70, 244, 0.589);
+    position: relative;
+}
+.box-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    column-gap: 3%;
+    row-gap: 20px;
+}
+.item {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.content {
+    font-weight: 800;
+    color: #e0b0ff; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(143, 70, 244, 0.589), 0 0 20px rgba(143, 70, 244, 0.589);
+    background: transparent; 
+}
+
+.main-text {
+    font-weight: 400;
+    color: #ffffff;
+    background: transparent;
+}
+.item {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;   
+    border-top: 2px solid rgba(143, 70, 244, 0.589);
+    border-left: 2px solid rgba(143, 70, 244, 0.589);
+    border-bottom: 2px solid rgba(170, 126, 230, 0.589);
+    border-right: 2px solid rgba(170, 126, 230, 0.589);
+    box-shadow: -5px -5px 15px rgba(191, 0, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.03); 
+    transition: 0.3s ease;
+}
+.item:hover {
+    transform: translateY(-5px);
+    border-top-color: #fff;
+    border-left-color: #fff;
+    box-shadow: -5px -5px 20px rgba(191, 0, 255, 0.4);
+}
+.btn-1 {
+    width: 45%;
+    max-width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 2px 9px rgba(191, 0, 255, 0.4);
+    font-size: 18px;
+    background: radial-gradient(rgb(28, 3, 54),rgb(0, 0, 0));
+}
+
+button {
+    border: 0;
+    outline: auto;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.623);
+    box-shadow: 0 2px 15px rgba(170, 126, 230, 0.589);
+    background: rgba(238, 222, 255, 0.199);
+}
+
+.split-right {
+    width: 50%;
+    background-image: url(scopio.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+.btn-2 {
+    width: 45%;
+    max-width: 250px;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 2px 9px rgba(191, 0, 255, 0.4);
+    font-size: 18px;
+    background: radial-gradient(rgba(28, 3, 54, 0.35),rgba(0, 0, 0, 0.35));
+    position: absolute;
+    bottom: 109px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        overflow: visible;
+    }
+    .split-left, .split-right {
+        width: 100%; 
+        height: auto;
+        padding: 40px 20px;
+    }
+    .hover-left .split-left, .hover-left .split-right,
+    .hover-right .split-right, .hover-right .split-left {
+        width: 100%;
+    }
+
+    .split-right {
+        min-height: 400px; 
+    }
+
+    .title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .text {
+        font-size: 18px;
+        text-align: center;
+        height: auto; 
+    }
+
+    .box-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-2 {
+        bottom: 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .split-left {
+        padding: 30px 15px;
+    }
+
+    .item {
+        padding: 15px 20px;
+    }
+
+    .btn-1, .btn-2 {
+        width: 80%;
+    }
+}
